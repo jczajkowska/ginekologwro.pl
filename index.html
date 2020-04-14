@@ -1,0 +1,630 @@
+<!doctype html>
+<html>
+<head>
+    <title>Gabinet ginekologiczny we Wrocławiu / Ruchlewicz, Czajkowska</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.3.1.slim.min.js"></script>
+    <script>
+        String.prototype.removeHangingConjunctions = function () {
+            var self = this.toString();
+            var re = /((?:^|[^abcdefghijklmnopqrstuvwxyząćęłńóśżź0-9])[abcdefghijklmnopqrstuvwxyząćęłńóśżź]{1,2}[!\(\)\-\[\]\{\}\+:;\"\'\/\\\?\<\>\,\.\~\`]?)\s+(\S{3,})/ig;
+            do {
+                self = self.replace(re, "$1\xB8$2");
+            } while (re.test(self));
+            return self.replace(/\xB8/g, "&nbsp;");
+        }
+//        console.log("na wierzchu i Ż tym tematem będziemy ogarniać NA BIEŻĄCO O! A w sprawie leków co to niby powodują...".removeHangingConjunctions());
+        ;(function($){
+            $(function() {
+                $('p, h1, h2, h3, h4, h5, h6, address').each(function() {
+                    //$(this).html( $(this).text().toString().removeHangingConjunctions() );
+                });
+            })
+        })(jQuery);
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500&subset=latin-ext');
+
+        address {
+            font-style: inherit;
+            display: block;
+        }
+
+        #basic figure {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+
+        figure {
+            text-align: center;
+        }
+
+        figure > img:first-of-type {
+            display: inline-block;
+            height: 8rem;
+        }
+
+        figure > figcaption:first-child {
+            text-align: left;
+        }
+
+        figure > figcaption:not(:first-child) {
+            display: inline;
+        }
+
+        figure > figcaption:not(:first-child) h4 {
+            flex-flow: column;
+            align-items: center;
+            max-width: 26rem;
+        }
+
+        figure > figcaption:not(:first-child) h4 var {
+            padding: 2rem 0;
+            font-size: 2em;
+        }
+
+        svg path {
+            stroke: currentColor;
+            fill: none;
+            stroke-width: .1vw;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-family: 'Work Sans', sans-serif;
+            line-height: 1.45;
+        }
+
+        body > * {
+            margin: auto;
+        }
+
+        iframe {
+            border: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        p {
+            margin-bottom: .6em;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.1;
+            margin: 1em 0 .5em;
+        }
+
+        h1, h2, h3 {
+            font-weight: 200;
+        }
+
+        h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        h1 {
+            margin-top: 2em;
+            font-size: 4.5rem;
+            font-weight: lighter;
+            text-transform: uppercase;
+            letter-spacing: .2ex;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+        }
+
+        h2 strong {
+            font-weight: inherit;
+        }
+
+        h2 em {
+            font-style: inherit;
+            font-size: .75em;
+        }
+
+        h3 {
+            margin-top: 0;
+            font-size: 2.2rem;
+            font-weight: 300;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.05ex;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+        }
+
+        var {
+            font-size: 1.5em;
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        var::after {
+            content: ',-';
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        main > article {
+            margin: 3em 0;
+        }
+
+        figcaption {
+            margin-top: 1em;
+        }
+
+        figcaption h4 {
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+
+        figcaption h4 var {
+            order: 1000;
+            padding-left: 2ex;
+        }
+
+        nav {
+            text-transform: uppercase;
+            letter-spacing: .2ex;
+        }
+
+        :not(main) a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a {
+            display: inline-block;
+            position: relative;
+        }
+
+        #splash:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: black url("bg.jpg") no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+
+        #splash {
+            position: relative;
+            color: white;
+            min-height: 52.5vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 3rem 0;
+        }
+
+        #splash > section {
+            width: 100%;
+        }
+
+        #splash h1 {
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        /*
+            #splash > section > main {
+                display: grid;
+            }
+            #splash h2 {
+                display: inline;
+            }
+        */
+
+        article > section {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+            align-items: start;
+            grid-gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        #menu {
+            padding: 1rem 0;
+            max-height: 7.5vh;
+            /*
+            background-color: white;
+            position: sticky;
+            top: 0; left: 0;
+            z-index: 1;
+            */
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #splash > section, body > main > article > *, #menu {
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+
+        #map {
+            min-height: 50vh;
+            max-width: none;
+            margin-bottom: 3rem;
+            width: 100%;
+            padding: 0;
+        }
+
+        #menu span:after {
+            content: ', ';
+        }
+        @media only screen and (min-aspect-ratio: 1/1) {
+            html {
+                font-size: 1.11vw;
+            }
+
+            #menu {
+                max-height: 7.5vh;
+            }
+
+            #menu a {
+                margin: 0 2ex;
+            }
+
+            #splash h2 em {
+                display: inline-block;
+                min-width: 15rem;
+                padding-right: 1ex;
+                text-align: right;
+            }
+
+            #splash h2 strong {
+                display: inline-block;
+            }
+
+            #splash h6 {
+                margin-left: 15rem;
+            }
+            p {
+                max-width: 37rem;
+            }
+        }
+
+        @media only screen and (min-width: 1440px) {
+            html {
+                font-size: 16px;
+            }
+
+            #splash > section, body > main > article > *, #menu {
+                max-width: 1440px;
+            }
+        }
+
+        @media only screen and (min-aspect-ratio: 16/9) and (max-width: 880px) {
+            html {
+                font-size: 2vw;
+            }
+
+            #splash > section, body > main > article > *, #menu {
+                display: block;
+                padding-left: 6rem;
+                padding-right: 6rem;
+            }
+
+            #menu {
+                max-height: none;
+                height: 10vh;
+            }
+
+            #splash {
+                min-height: 90vh;
+            }
+
+            #splash h1 {
+                display: none;
+            }
+
+            body > main header {
+                margin-top: 6rem;
+            }
+
+            #menu nav {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-aspect-ratio: 1/1) {
+            html {
+                font-size: 2vh;
+            }
+
+            #splash > section, body > main > article > *, #menu {
+                display: block;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            #splash h2 em {
+                display: block;
+            }
+
+            #splash h2 strong {
+                display: block;
+            }
+
+            #menu {
+                max-height: none;
+                height: 10vh;
+            }
+            #menu span {
+                display: none;
+            }
+
+            #splash {
+                min-height: 90vh;
+            }
+
+            #splash h1 {
+                display: none;
+            }
+
+            body > main header {
+                margin-top: 6rem;
+            }
+
+            #menu nav {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<nav id="menu">
+    <a id="brand" href="#">Gabinet Ginekologiczny</a>
+    <nav>
+        <a href="#cennik">Cennik</a>
+        <a href="#o-nas">O nas</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a id="contact" href="#address"><span>Wrocław</span> Gliniana 32/34</a>
+</nav>
+<header id="splash">
+    <section>
+        <h1>Gabinet ginekologiczny</h1>
+        <main>
+            <h2><em>dr n. med.</em><strong>Arkadiusz Ruchlewicz</strong></h2>
+            <h6>specjalista ginekologii i położnictwa<br>
+                <a href="tel:+48600056924">tel. 600 056 924</a></h6>
+        </main>
+        <main>
+            <h2><em>lek. med.</em><strong>Jolanta Czajkowska</strong></h2>
+            <h6>specjalista ginekologii i położnictwa<br>
+                <a href="tel:+48607057267">tel. 607 057 267</a></h6>
+        </main>
+    </section>
+</header>
+<main>
+    <article id="cennik">
+        <!--<h1>Cennik</h1>-->
+        <section id="basic">
+            <figure>
+                <img src="gyn-chair-and-usg.svg">
+                <figcaption>
+                    <h4>
+                        <var>150</var>
+                        <label>wizyta z&nbsp;badaniem ginekologicznym i&nbsp;podstawowym USG</label>
+                    </h4>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="paper.svg">
+                <figcaption>
+                    <h4>
+                        <var>100</var>
+                        <label>wizyta konsultacyjna bez badania ginekologicznego i&nbsp;USG</label>
+                    </h4>
+                </figcaption>
+            </figure>
+        </section>
+        <header>
+            <p>W ofercie proponujemy m.in.:</p>
+
+            <h3>Badania profilaktyczne raka szyjki macicy</h3>
+        </header>
+        <section>
+            <main>
+                <figure>
+                    <figcaption>
+                        <h4><var>90</var> <label>Cytologia LBC</label></h4>
+
+                        <p>cytologia cienkowarstwowa na podłożu płynnym (Liquid Based Cytology)</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <figcaption>
+                        <h4><var>130</var> <label>HPV 14 typów</label></h4>
+
+                        <p>DNA 14 wysokoonkogennych typów wirusa brodawczaka ludzkiego (Human Papilloma Virus)</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <figcaption>
+                        <h4><var>180</var> <label>HPV 37 typów</label></h4>
+
+                        <p>DNA 37 wysoko- i niskoonkogennych typów wirusa brodawczaka ludzkiego (Human Papilloma
+                            Virus)</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <figcaption>
+                        <h4><var>190</var> <label>Cytologia LBC + HPV 14 typów</label></h4>
+
+                        <p>cytologia cienkowarstwowa na podłożu płynnym wraz z badaniem DNA 14 wysokoonkogennych typów
+                            wirusa HPV</p>
+                    </figcaption>
+                </figure>
+            </main>
+            <main>
+                <figure>
+                    <figcaption>
+                        <h4><var>260</var> <label>CINtec PLUS</label></h4>
+
+                        <p>identyfikacja biomarkerów nowotworowych: białek p16&nbsp;oraz Ki&nbsp;67 (test CINtecPlus);
+                            badanie to&nbsp;pozwala na&nbsp;wykrywanie rzeczywistej patologii szyjki macicy &ndash;
+                            stanów przedrakowych dużego
+                            stopnia CIN&nbsp;II (HGSIL), również u&nbsp;kobiet z&nbsp;prawidłowym wynikiem cytologii
+                            oraz&nbsp;z&nbsp;wynikiem ASC-&nbsp;US i
+                            LSIL</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <figcaption>
+                        <h4><var>300</var> <label>HPV RNA</label></h4>
+
+                        <p>wykrywanie mRNA onkogenów E6 i E7, genotypów 16, 18, 31, 33, 45</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <figcaption>
+                        <h4><var>320</var> <label>LBC + CINtec PLUS</label></h4>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <figcaption>
+                        <h4><var>450</var> <label>LBC + CINtec PLUS + HPV 14 typów wysokoonkogennych</label></h4>
+
+                        <p>dla kobiet z podwyższonym ryzykiem raka szyjki macicy</p>
+                    </figcaption>
+                </figure>
+            </main>
+        </section>
+        <section>
+            <main>
+                <header><h3>Diagnostyka i leczenie infekcji narządu rodnego</h3></header>
+                <figure>
+                    <figcaption><h4><var>110</var> <label>Wymaz (posiew + antybiogram)</label></h4>
+
+                        <p>z pochwy lub z kanału szyjki macicy na obecność bakterii tlenowych, beztlenowych, grzybów; w
+                            razie wykrycia patogenów &ndash; dobór antybiotyku (antybiogram) w cenie</p></figcaption>
+                </figure>
+                <article>
+                    <h3>Diagnostyka chorób przenoszonych drogą płciową</h3>
+
+                    <p>w tym m.in. badania metodą PCR na obecność Chlamydia, Ureaplasma, Mycoplasma</p>
+                </article>
+            </main>
+            <main>
+                <header><h3>GBS (paciorkowiec grupy B)</h3></header>
+                <figure>
+                    <figcaption>
+                        <h4><var>40</var> <label>Wymaz z przedsionka pochwy</label></h4>
+
+                        <p>wymaz z przedsionka pochwy w kierunku paciorkowców grupy B (Streptococcus agalactiae)</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <figcaption>
+                        <h4><var>40</var> <label>Wymaz z odbytnicy</label></h4>
+
+                        <p>wymaz z odbytnicy w kierunku paciorkowców grupy B (Streptococcus agalactiae)</p>
+                    </figcaption>
+                </figure>
+            </main>
+        </section>
+        <header><h3>Pakiety badań laboratoryjnych w korzystnych cenach</h3></header>
+    </article>
+    <article id="o-nas">
+        <header><h1>O nas</h1></header>
+        <section>
+            <main>
+                <header><h3>Arkadiusz Ruchlewicz</h3></header>
+                <p>Absolwent Wydziału Lekarskiego Akademii Medycznej we&nbsp;Wrocławiu z&nbsp;1983 roku. I&nbsp;stopień
+                    specjalizacji
+                    uzyskał w&nbsp;1987&nbsp;roku, II&nbsp;stopień w&nbsp;1990 roku. Jest doktorem nauk medycznych.
+                    Przez wiele lat pracował
+                    na&nbsp;stanowiskach asystenta, starszego asystenta, ordynatora oddziału kolejno w&nbsp;Dolnośląskim
+                    Centrum
+                    Onkologii we&nbsp;Wrocławiu, w&nbsp;Szpitalu im.&nbsp;A.&nbsp;Falkiewicza we&nbsp;Wrocławiu,
+                    Strzelińskim Centrum Medycznym.
+                    Od&nbsp;1991 roku prowadzi prywatną specjalistyczną praktykę lekarską.</p>
+
+                <p>Posiada wieloletnie doświadczenie w&nbsp;pracy w&nbsp;krajach Unii Europejskiej: w&nbsp;Wielkiej
+                    Brytanii, Irlandii
+                    i&nbsp;Holandii. Swoją wiedzę zawodową uaktualnia i&nbsp;poszerza uczestnicząc w&nbsp;szkoleniach i&nbsp;konferencjach
+                    naukowych.</p>
+
+                <p>Języki: angielski i&nbsp;rosyjski.</p>
+            </main>
+            <main>
+                <header><h3>Jolanta Czajkowska</h3></header>
+                <p>Absolwentka Wydziału Lekarskiego Akademii Medycznej we&nbsp;Wrocławiu z&nbsp;1991 roku. I&nbsp;stopień
+                    specjalizacji
+                    uzyskała w&nbsp;1996 roku, II&nbsp;stopień w&nbsp;1999 roku. Przez wiele lat pracowała na&nbsp;stanowiskach
+                    asystenta i&nbsp;starszego
+                    asystenta m.in.&nbsp;w&nbsp;Szpitalu im.&nbsp;A.&nbsp;Falkiewicza we&nbsp;Wrocławiu.</p>
+
+                <p>Równolegle pracowała i&nbsp;pracuje w&nbsp;lecznictwie otwartym. Od&nbsp;2000 roku prowadzi prywatną
+                    specjalistyczną
+                    praktykę lekarską. </p>
+
+                <p>Posiada wieloletnie doświadczenie w&nbsp;pracy w&nbsp;krajach Unii Europejskiej: w&nbsp;Wielkiej
+                    Brytanii, Irlandii&nbsp;i Holandii.
+                    Swoją wiedzę zawodową uaktualnia i&nbsp;poszerza uczestnicząc w&nbsp;szkoleniach i&nbsp;konferencjach
+                    naukowych.</p>
+
+                <p>Języki: angielski i&nbsp;rosyjski.</p>
+            </main>
+        </section>
+    </article>
+    <article id="kontakt">
+        <header><h1>Kontakt</h1></header>
+        <iframe id="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.818291094851!2d17.036541116475878!3d51.093360879569296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc266c0f0f7f7%3A0x3717958dc1dc457d!2sGliniana+32%2F34%2C+50-525+Wroc%C5%82aw!5e0!3m2!1spl!2spl!4v1523365839172"
+                allowfullscreen></iframe>
+        <section>
+            <main id="address">
+                <h4>
+                    <address>Gliniana 32/34 pok. 2A<br>50-525 Wrocław<br>200 metrów od Galerii Wroclavia</address>
+
+                </h4>
+            </main>
+            <main>
+                <p>Arkadiusz Ruchlewicz<br>
+                    <a href="tel:+48600056924">tel. 600 056 924</a></p>
+
+                <p>Jolanta Czajkowska<br>
+                    <a href="tel:+48607057267">tel. 607 057 267</a></p>
+            </main>
+        </section>
+    </article>
+</main>
+</body>
+</html>
